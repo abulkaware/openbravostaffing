@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SqlClass id="class" name="TransactionData" package="org.openbravo.erpWindows.FinancialAccount">
+  <SqlClassComment>WAD Generated class</SqlClassComment>
+
+  <SqlMethod name="dummy" type="preparedStatement" return="multiple">
+    <Sql>
+      SELECT '' AS dummy from DUAL
+    </Sql>
+  </SqlMethod>
+
+
+   <SqlMethod name="selectActP15C8708DFC464C2D91286E59624FDD18_C_GLItem_ID" type="preparedStatement" return="String" default="">
+    <SqlMethodComment>Select for auxiliar field</SqlMethodComment>
+    <Sql><![CDATA[
+        SELECT name FROM C_GLItem WHERE C_GLItem_ID=? 
+    ]]></Sql>
+
+<Parameter name="C_GLItem_ID"/>
+  </SqlMethod>
+
+
+
+
+
+
+</SqlClass>

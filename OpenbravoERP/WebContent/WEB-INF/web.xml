@@ -1,0 +1,7211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="webapp" xmlns="http://java.sun.com/xml/ns/j2ee"    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"   version="3.0">
+  
+    <listener>
+      <display-name>
+        org.jboss.weld.environment.servlet.Listener
+      </display-name>
+      <listener-class>
+        org.jboss.weld.environment.servlet.Listener
+      </listener-class>
+    </listener>
+  
+    <listener>
+      <display-name>
+        org.openbravo.base.ConnectionProviderContextListener
+      </display-name>
+      <listener-class>
+        org.openbravo.base.ConnectionProviderContextListener
+      </listener-class>
+    </listener>
+  
+    <listener>
+      <display-name>
+        org.openbravo.base.ServerVersionChecker
+      </display-name>
+      <listener-class>
+        org.openbravo.base.ServerVersionChecker
+      </listener-class>
+    </listener>
+  
+    <listener>
+      <display-name>
+        org.openbravo.dal.core.DalContextListener
+      </display-name>
+      <listener-class>
+        org.openbravo.dal.core.DalContextListener
+      </listener-class>
+    </listener>
+  
+    <listener>
+      <display-name>
+        org.openbravo.client.kernel.KernelContextListener
+      </display-name>
+      <listener-class>
+        org.openbravo.client.kernel.KernelContextListener
+      </listener-class>
+    </listener>
+  
+    <listener>
+      <display-name>
+        org.openbravo.base.OBSchedulerInitializerListener
+      </display-name>
+      <listener-class>
+        org.openbravo.base.OBSchedulerInitializerListener
+      </listener-class>
+    </listener>
+  
+    <listener>
+      <display-name>
+        org.openbravo.erpCommon.security.SessionListener
+      </display-name>
+      <listener-class>
+        org.openbravo.erpCommon.security.SessionListener
+      </listener-class>
+    </listener>
+  
+    <listener>
+      <display-name>
+        org.openbravo.base.SystemStatusListener
+      </display-name>
+      <listener-class>
+        org.openbravo.base.SystemStatusListener
+      </listener-class>
+    </listener>
+  
+    <listener>
+      <display-name>
+        org.openbravo.service.importprocess.ImportProcessContextListener
+      </display-name>
+      <listener-class>
+        org.openbravo.service.importprocess.ImportProcessContextListener
+      </listener-class>
+    </listener>
+  
+
+  
+    <filter>
+      <filter-name>
+        M36A67D2D76A5488491850AF14F83A6FF
+      </filter-name>
+      <filter-class>
+        org.openbravo.dal.core.DalRequestFilter
+      </filter-class>
+      
+    </filter>
+  
+    <filter>
+      <filter-name>
+        MFF808181332A531601332A63F89D0007
+      </filter-name>
+      <filter-class>
+        org.openbravo.client.kernel.KernelFilter
+      </filter-class>
+      
+    </filter>
+  
+    <filter>
+      <filter-name>
+        MCD9445A64E6B435AA70BFF526289C69B
+      </filter-name>
+      <filter-class>
+        org.openbravo.utils.CharsetFilter
+      </filter-class>
+      
+  <init-param>
+    <param-name>requestEncoding</param-name>
+    <param-value>UTF-8</param-value>
+  </init-param>
+
+    </filter>
+  
+    <filter>
+      <filter-name>
+        MDF2601D0FF9041F49B069600B7603FE0
+      </filter-name>
+      <filter-class>
+        org.openbravo.utils.SessionExpirationFilter
+      </filter-class>
+      
+    </filter>
+  
+
+
+  
+
+  
+  <context-param>
+    <param-name>BaseConfigPath</param-name>
+    <param-value>WEB-INF</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>BaseDesignPath</param-name>
+    <param-value>src-loc</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>DefaultDesignPath</param-name>
+    <param-value>design</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>Version</param-name>
+    <param-value>38.7</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>Parent_Version</param-name>
+    <param-value></param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>ReplaceWhat</param-name>
+    <param-value>../../../../../web</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>TextDividedByZero</param-name>
+    <param-value>.../0</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>log4j-init-file</param-name>
+    <param-value>log4j.lcf</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>PoolFile</param-name>
+    <param-value>Openbravo.properties</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>FormatFile</param-name>
+    <param-value>Format.xml</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>FOPConfig</param-name>
+    <param-value>userconfig.xml</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>DefaultServlet</param-name>
+    <param-value>/utility/Home.xhtml</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>LoginServlet</param-name>
+    <param-value>/security/Login</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>AttachmentDirectory</param-name>
+    <param-value>/opt/OpenbravoERP/attachments</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>PeriodicBackgroundTime</param-name>
+    <param-value>10</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>LogFileAcctServer</param-name>
+    <param-value>AcctServer.log</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>ReplaceWith</param-name>
+    <param-value>@actual_url_context@/web</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>config-file</param-name>
+    <param-value>quartz.properties</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>shutdown-on-unload</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>start-scheduler-on-load</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>start-delay-seconds</param-name>
+    <param-value>30</param-value>
+  </context-param>
+  
+  
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.Amortization.Header
+      </display-name>
+      <servlet-name>
+        W800076
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.Amortization.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.AssetGroup.Accounting
+      </display-name>
+      <servlet-name>
+        W800204
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.AssetGroup.Accounting
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.Assets.Assets
+      </display-name>
+      <servlet-name>
+        W800078
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.Assets.Assets
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.BillofMaterialsProduction.BOMProduction
+      </display-name>
+      <servlet-name>
+        W319
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.BillofMaterialsProduction.BOMProduction
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.Budget.Header
+      </display-name>
+      <servlet-name>
+        W800205
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.Budget.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.BusinessPartnerCategory.Accounting
+      </display-name>
+      <servlet-name>
+        W323
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.BusinessPartnerCategory.Accounting
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.Commission.Header
+      </display-name>
+      <servlet-name>
+        W355
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.Commission.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.CommissionPayment.Header
+      </display-name>
+      <servlet-name>
+        W362
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.CommissionPayment.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.CostAdjustment.Header
+      </display-name>
+      <servlet-name>
+        W45A6D51BFBB74C079AC559A4240A296D
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.CostAdjustment.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.org.openbravo.advpaymentmngt.DoubtfulDebt.DoubtfulDebt9D859A2A50F44562AFA21AAF2DF91B8A
+      </display-name>
+      <servlet-name>
+        W9D859A2A50F44562AFA21AAF2DF91B8A
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.org.openbravo.advpaymentmngt.DoubtfulDebt.DoubtfulDebt9D859A2A50F44562AFA21AAF2DF91B8A
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.org.openbravo.advpaymentmngt.DoubtfulDebtRun.DoubtfulDebtRunFA66A130BE8B48E88BF4F5A6E2FA0CDD
+      </display-name>
+      <servlet-name>
+        WFA66A130BE8B48E88BF4F5A6E2FA0CDD
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.org.openbravo.advpaymentmngt.DoubtfulDebtRun.DoubtfulDebtRunFA66A130BE8B48E88BF4F5A6E2FA0CDD
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.org.openbravo.advpaymentmngt.DoubtfulDebtRun.DoubtfulDebtE4DC11F751F34F0DAE11A4D856CD99EB
+      </display-name>
+      <servlet-name>
+        WE4DC11F751F34F0DAE11A4D856CD99EB
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.org.openbravo.advpaymentmngt.DoubtfulDebtRun.DoubtfulDebtE4DC11F751F34F0DAE11A4D856CD99EB
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.EndYearClose.EndYearClose
+      </display-name>
+      <servlet-name>
+        W97E1F35BE08840AFB1DA4FE66D329542
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.EndYearClose.EndYearClose
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ExpenseSheet.Header
+      </display-name>
+      <servlet-name>
+        W412
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ExpenseSheet.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.FinancialAccount.Transaction
+      </display-name>
+      <servlet-name>
+        W23691259D1BD4496BCC5F32645BCA4B9
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.FinancialAccount.Transaction
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.FinancialAccount.ImportedBankStatements
+      </display-name>
+      <servlet-name>
+        WC56E698100314ABBBBD3A89626CA551C
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.FinancialAccount.ImportedBankStatements
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.FinancialAccount.ReconciliationsFF8080813320657F0133209DE21B0042
+      </display-name>
+      <servlet-name>
+        WFF8080813320657F0133209DE21B0042
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.FinancialAccount.ReconciliationsFF8080813320657F0133209DE21B0042
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.FiscalCalendar.Year
+      </display-name>
+      <servlet-name>
+        W129
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.FiscalCalendar.Year
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.GeneralLedgerConfiguration.Defaults
+      </display-name>
+      <servlet-name>
+        W252
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.GeneralLedgerConfiguration.Defaults
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.GLJournal.Batch
+      </display-name>
+      <servlet-name>
+        W159
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.GLJournal.Batch
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.GLJournal.Header
+      </display-name>
+      <servlet-name>
+        W160
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.GLJournal.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.GLJournal.Lines
+      </display-name>
+      <servlet-name>
+        W161
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.GLJournal.Lines
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.GoodsMovements.Header
+      </display-name>
+      <servlet-name>
+        W259
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.GoodsMovements.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.GoodsReceipt.Header
+      </display-name>
+      <servlet-name>
+        W296
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.GoodsReceipt.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.GoodsReceipt.Lines
+      </display-name>
+      <servlet-name>
+        W297
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.GoodsReceipt.Lines
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.GoodsShipment.Header
+      </display-name>
+      <servlet-name>
+        W257
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.GoodsShipment.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.GoodsShipment.Lines
+      </display-name>
+      <servlet-name>
+        W258
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.GoodsShipment.Lines
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.IndirectCost.Value
+      </display-name>
+      <servlet-name>
+        W800230
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.IndirectCost.Value
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.InternalConsumption.Header
+      </display-name>
+      <servlet-name>
+        W800202
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.InternalConsumption.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.LandedCost.Header
+      </display-name>
+      <servlet-name>
+        WF25CBC61CDD64F5E8A6FDC41C6E23C96
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.LandedCost.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.LandedCost.Cost
+      </display-name>
+      <servlet-name>
+        W1C05058D61AC4B69A7E550F32F9F2873
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.LandedCost.Cost
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.Language.Language
+      </display-name>
+      <servlet-name>
+        W112
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.Language.Language
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ManageRequisitions.Header
+      </display-name>
+      <servlet-name>
+        W1004400001
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ManageRequisitions.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ManageRequisitions.Lines
+      </display-name>
+      <servlet-name>
+        W1004400002
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ManageRequisitions.Lines
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ManufacturingPlan.Header
+      </display-name>
+      <servlet-name>
+        W800255
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ManufacturingPlan.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ManufacturingPlan.Lines
+      </display-name>
+      <servlet-name>
+        W800257
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ManufacturingPlan.Lines
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.MatchedInvoices.MatchedInvoice
+      </display-name>
+      <servlet-name>
+        W408
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.MatchedInvoices.MatchedInvoice
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.MultiphaseProject.MultiphaseProject
+      </display-name>
+      <servlet-name>
+        W157
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.MultiphaseProject.MultiphaseProject
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.MultiphaseProject.ProjectPhase
+      </display-name>
+      <servlet-name>
+        W478
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.MultiphaseProject.ProjectPhase
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.Organization.Organization
+      </display-name>
+      <servlet-name>
+        W143
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.Organization.Organization
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.PaymentIn.Header
+      </display-name>
+      <servlet-name>
+        WC4B6506838E14A349D6717D6856F1B56
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.PaymentIn.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.PaymentOut.Header
+      </display-name>
+      <servlet-name>
+        WF7A52FDAAA0346EFA07D53C125B40404
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.PaymentOut.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.PeriodicQualityControlData.Test
+      </display-name>
+      <servlet-name>
+        W800161
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.PeriodicQualityControlData.Test
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.PhysicalInventory.Header
+      </display-name>
+      <servlet-name>
+        W255
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.PhysicalInventory.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.PriceList.PriceListVersion
+      </display-name>
+      <servlet-name>
+        W238
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.PriceList.PriceListVersion
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ProcessPlan.IOProducts
+      </display-name>
+      <servlet-name>
+        W800110
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ProcessPlan.IOProducts
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.Product.Product
+      </display-name>
+      <servlet-name>
+        W180
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.Product.Product
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ProductCategory.Accounting
+      </display-name>
+      <servlet-name>
+        W324
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ProductCategory.Accounting
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ProductionRun.ProductionRun
+      </display-name>
+      <servlet-name>
+        WC9B5394DBA8C465C9CE26A361696B06E
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ProductionRun.ProductionRun
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.PurchaseInvoice.Header
+      </display-name>
+      <servlet-name>
+        W290
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.PurchaseInvoice.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.PurchaseInvoice.Lines
+      </display-name>
+      <servlet-name>
+        W291
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.PurchaseInvoice.Lines
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.PurchaseOrder.Header
+      </display-name>
+      <servlet-name>
+        W294
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.PurchaseOrder.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.PurchaseOrder.Lines
+      </display-name>
+      <servlet-name>
+        W293
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.PurchaseOrder.Lines
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.PurchasingPlan.Header
+      </display-name>
+      <servlet-name>
+        W800258
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.PurchasingPlan.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.QualityControlReport.DateandShift
+      </display-name>
+      <servlet-name>
+        W800158
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.QualityControlReport.DateandShift
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.QualityControlReport.Time
+      </display-name>
+      <servlet-name>
+        W800154
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.QualityControlReport.Time
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.Requisition.Requisition
+      </display-name>
+      <servlet-name>
+        W800249
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.Requisition.Requisition
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ReturnfromCustomer.Header
+      </display-name>
+      <servlet-name>
+        WAF4090093CFF1431E040007F010048A5
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ReturnfromCustomer.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ReturnMaterialReceipt.Header
+      </display-name>
+      <servlet-name>
+        W30576C6ABD12419F9D19D497216FC9B8
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ReturnMaterialReceipt.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ReturntoVendor.Header
+      </display-name>
+      <servlet-name>
+        W5A5CCFC8359B4D79BA705DC487FE8173
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ReturntoVendor.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ReturntoVendorShipment.Header
+      </display-name>
+      <servlet-name>
+        W728DBD16A1F14A4D82335E37BA433E33
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ReturntoVendorShipment.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.SalesInvoice.Header
+      </display-name>
+      <servlet-name>
+        W263
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.SalesInvoice.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.SalesInvoice.Lines
+      </display-name>
+      <servlet-name>
+        W270
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.SalesInvoice.Lines
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.SalesOrder.Header
+      </display-name>
+      <servlet-name>
+        W186
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.SalesOrder.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.SalesOrder.Lines
+      </display-name>
+      <servlet-name>
+        W187
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.SalesOrder.Lines
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.SalesQuotation.Header
+      </display-name>
+      <servlet-name>
+        WF87F1EB7EB404F1F916EBAFAD1A0A334
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.SalesQuotation.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ServiceProject.ServiceProject
+      </display-name>
+      <servlet-name>
+        W800002
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ServiceProject.ServiceProject
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ServiceProject.Supplier
+      </display-name>
+      <servlet-name>
+        W800005
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ServiceProject.Supplier
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.ServiceProject.Proposal
+      </display-name>
+      <servlet-name>
+        W800004
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.ServiceProject.Proposal
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.Session.Session
+      </display-name>
+      <servlet-name>
+        W475
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.Session.Session
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.SimpleGLJournal.Header
+      </display-name>
+      <servlet-name>
+        W5A6F0ED7230C462BA4010653BA3F816A
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.SimpleGLJournal.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.SimpleGLJournal.Lines
+      </display-name>
+      <servlet-name>
+        W7797C73348324DCBB7F17666F31C87A5
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.SimpleGLJournal.Lines
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.StockReservation.Reservation
+      </display-name>
+      <servlet-name>
+        WD53F675ADB2745059623175D8870A721
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.StockReservation.Reservation
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.TablesandColumns.Table
+      </display-name>
+      <servlet-name>
+        W100
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.TablesandColumns.Table
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.TaxPayment.Header
+      </display-name>
+      <servlet-name>
+        W1002100011
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.TaxPayment.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.WindowsTabsandFields.Window
+      </display-name>
+      <servlet-name>
+        W105
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.WindowsTabsandFields.Window
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.WindowsTabsandFields.Tab
+      </display-name>
+      <servlet-name>
+        W106
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.WindowsTabsandFields.Tab
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.WorkEffort.WorkEffort
+      </display-name>
+      <servlet-name>
+        W800114
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.WorkEffort.WorkEffort
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.WorkEffort.ProductionRun
+      </display-name>
+      <servlet-name>
+        W800117
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.WorkEffort.ProductionRun
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.WorkRequirement.Header
+      </display-name>
+      <servlet-name>
+        W800111
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.WorkRequirement.Header
+      </servlet-class>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpWindows.WorkRequirement.Operation
+      </display-name>
+      <servlet-name>
+        W800112
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpWindows.WorkRequirement.Operation
+      </servlet-class>
+    </servlet>
+  
+
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.ProjectMultiple
+      </display-name>
+      <servlet-name>
+        M09E69919A6B743B085123AC94A96155C
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.ProjectMultiple
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.ChangeAudit
+      </display-name>
+      <servlet-name>
+        M1005200000
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.ChangeAudit
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.ShowImageLogo
+      </display-name>
+      <servlet-name>
+        M166DCDDE740F457792246F2FD3320E62
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.ShowImageLogo
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.base.HttpBaseServlet
+      </display-name>
+      <servlet-name>
+        M18DA249486964F65818793F51AF50058
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.base.HttpBaseServlet
+      </servlet-class>
+      
+      <load-on-startup>1</load-on-startup>
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.security.SessionActive
+      </display-name>
+      <servlet-name>
+        M1EC03C207CB741AE8C94DBF0340E2429
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.security.SessionActive
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.businessUtility.MessageJS
+      </display-name>
+      <servlet-name>
+        M2DE49388A33B4FBFBA845E4DCF5E83B2
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.businessUtility.MessageJS
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.obps.CheckCleanCache
+      </display-name>
+      <servlet-name>
+        M488B251D70EA4B8784E748836042CD66
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.obps.CheckCleanCache
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.ImageInfoBLOB
+      </display-name>
+      <servlet-name>
+        M589C21D5907E486A9DFC45A2C466DDF7
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.ImageInfoBLOB
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.xmlEngine.XmlEngine
+      </display-name>
+      <servlet-name>
+        M69EB0238E9FE452280BCCE231E71D1E9
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.xmlEngine.XmlEngine
+      </servlet-class>
+      
+  <init-param>
+    <param-name>fileConfigurationLog4j</param-name>
+    <param-value>log4j.lcf</param-value>
+  </init-param>
+
+  <init-param>
+    <param-name>ReplaceWhat</param-name>
+    <param-value>../../../../../../</param-value>
+  </init-param>
+
+  <init-param>
+    <param-name>ReplaceWith</param-name>
+    <param-value>../</param-value>
+  </init-param>
+
+  <init-param>
+    <param-name>TextDividedByZero</param-name>
+    <param-value>Div /0</param-value>
+  </init-param>
+
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_callouts.SL_MInOutTraceReports
+      </display-name>
+      <servlet-name>
+        M801168
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_callouts.SL_MInOutTraceReports
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.About
+      </display-name>
+      <servlet-name>
+        M801388
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.About
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.obps.GetOpenbravoLogo
+      </display-name>
+      <servlet-name>
+        M8993A79B45F8457CB56FC27F084FF5C6
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.obps.GetOpenbravoLogo
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.obps.GetOpenbravoLogoGen
+      </display-name>
+      <servlet-name>
+        M8A935F84A79B45F8457CB91B09764786
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.obps.GetOpenbravoLogoGen
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.service.web.WebServiceServlet
+      </display-name>
+      <servlet-name>
+        M8B7776CB913C4AA691B099647862D191
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.service.web.WebServiceServlet
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.ShowImage
+      </display-name>
+      <servlet-name>
+        M9931DE504494438491E5B89E7F1CF9B7
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.ShowImage
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.client.kernel.KernelServlet
+      </display-name>
+      <servlet-name>
+        MA761FF99519C45D1A4BEE9FA30B40AAC
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.client.kernel.KernelServlet
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.ShowLogFile
+      </display-name>
+      <servlet-name>
+        MBB540F2CEA514936B5E60216ACE844B3
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.ShowLogFile
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_callouts.SL_CreateLines_Conversion_UOM
+      </display-name>
+      <servlet-name>
+        MCE710B1C239D491F8A7D98407283FACE
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_callouts.SL_CreateLines_Conversion_UOM
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.service.json.JsonRestServlet
+      </display-name>
+      <servlet-name>
+        ME84320A852114BB99050FC4D0A6A006E
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.service.json.JsonRestServlet
+      </servlet-class>
+      
+  <init-param>
+    <param-name>mapping_name</param-name>
+    <param-value>org.openbravo.service.json.jsonrest</param-value>
+  </init-param>
+
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.service.datasource.DataSourceServlet
+      </display-name>
+      <servlet-name>
+        MEDCEE2B913E94D6AAF17B92CE2672028
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.service.datasource.DataSourceServlet
+      </servlet-class>
+      
+  <init-param>
+    <param-name>mapping_name</param-name>
+    <param-value>org.openbravo.service.datasource</param-value>
+  </init-param>
+
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.SelectExpectedPayments
+      </display-name>
+      <servlet-name>
+        P0F3F7B9BC1054B3BAEFC8BC44C55ADF9
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.SelectExpectedPayments
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_callouts.ComboReloadsProcessHelper
+      </display-name>
+      <servlet-name>
+        P1000100037
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_callouts.ComboReloadsProcessHelper
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.reporting.printing.PrintOrders
+      </display-name>
+      <servlet-name>
+        P1000500009
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.reporting.printing.PrintOrders
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.reporting.printing.PrintInvoices
+      </display-name>
+      <servlet-name>
+        P1000500018
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.reporting.printing.PrintInvoices
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.reporting.printing.PrintShipments
+      </display-name>
+      <servlet-name>
+        P1000500020
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.reporting.printing.PrintShipments
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.CreateVatRegisters
+      </display-name>
+      <servlet-name>
+        P1002100040
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.CreateVatRegisters
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.TestHeartbeat
+      </display-name>
+      <servlet-name>
+        P1005400022
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.TestHeartbeat
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.OpenPentaho
+      </display-name>
+      <servlet-name>
+        P1006100000
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.OpenPentaho
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.DisplayJasper
+      </display-name>
+      <servlet-name>
+        P103F72BB0AB846CA984329F18CAD938F
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.DisplayJasper
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.ExportReferenceData
+      </display-name>
+      <servlet-name>
+        P143C42B0268F411F8D6AC8475B8A0ABF
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.ExportReferenceData
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.ApplyModulesCallServlet
+      </display-name>
+      <servlet-name>
+        P14CF968D43864D6AB6F2CEF1971A785D
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.ApplyModulesCallServlet
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.UnscheduleProcess
+      </display-name>
+      <servlet-name>
+        P2ED19D9C8B784FA690A7CD6960B22DC1
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.UnscheduleProcess
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.ApplyModules
+      </display-name>
+      <servlet-name>
+        P30D55DB2422B4CA7B7B2355E1A08EF11
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.ApplyModules
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.RegisterModule
+      </display-name>
+      <servlet-name>
+        P328EDF326D894E7D8BBA2B06FB07F1EA
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.RegisterModule
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.ExecutePayments
+      </display-name>
+      <servlet-name>
+        P34307064C7DD4040BC9285E723FE3DC5
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.ExecutePayments
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportAssetDepreciationSchedule
+      </display-name>
+      <servlet-name>
+        P35F48DA64DB14F0489CC0C9BF6C3A849
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportAssetDepreciationSchedule
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        net.sf.jasperreports.j2ee.servlets.ImageServlet
+      </display-name>
+      <servlet-name>
+        P42DBBE8035384E7AB90CD09CAF09AF47
+      </servlet-name>
+      <servlet-class>
+        net.sf.jasperreports.j2ee.servlets.ImageServlet
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.Reconciliation
+      </display-name>
+      <servlet-name>
+        P46A3E47C3F414E948988B487A85FC244
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.Reconciliation
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.LocatorMultiple
+      </display-name>
+      <servlet-name>
+        P550FC091B0F948B39A3D48208C169B23
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.LocatorMultiple
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.GenericTreeServlet
+      </display-name>
+      <servlet-name>
+        P572786B150B322EFE040007F01006814
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.GenericTreeServlet
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.DownloadReport
+      </display-name>
+      <servlet-name>
+        P57E4989019704AB7AA59C82EAB4486D5
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.DownloadReport
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.StaticCommunityBranding
+      </display-name>
+      <servlet-name>
+        P5BD1584795784B85B4E45757EC54CED7
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.StaticCommunityBranding
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.MatchTransaction
+      </display-name>
+      <servlet-name>
+        P62CA7E15A1D94659808D715D1A6D65F9
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.MatchTransaction
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.InvoicePaymentMonitor
+      </display-name>
+      <servlet-name>
+        P64FFE615A5BA43DDAA13806DFE228F79
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.InvoicePaymentMonitor
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.ProjectClose
+      </display-name>
+      <servlet-name>
+        P800703
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.ProjectClose
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.ExpenseSOrder
+      </display-name>
+      <servlet-name>
+        P800707
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.ExpenseSOrder
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.ProjectCopyFrom
+      </display-name>
+      <servlet-name>
+        P800711
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.ProjectCopyFrom
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.CreateRegFactAcct
+      </display-name>
+      <servlet-name>
+        P800712
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.CreateRegFactAcct
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.ProjectSetType
+      </display-name>
+      <servlet-name>
+        P800714
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.ProjectSetType
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.PrintInvoices
+      </display-name>
+      <servlet-name>
+        P800717
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.PrintInvoices
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.DropRegFactAcct
+      </display-name>
+      <servlet-name>
+        P800722
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.DropRegFactAcct
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.CopyFromGLJournal
+      </display-name>
+      <servlet-name>
+        P800723
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.CopyFromGLJournal
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.CopyFromInvoice
+      </display-name>
+      <servlet-name>
+        P800734
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.CopyFromInvoice
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.CopyFromOrder
+      </display-name>
+      <servlet-name>
+        P800735
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.CopyFromOrder
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.CreateFile
+      </display-name>
+      <servlet-name>
+        P800736
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.CreateFile
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.CreateFromMultiple
+      </display-name>
+      <servlet-name>
+        P800737
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.CreateFromMultiple
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.CopyFromSettlement
+      </display-name>
+      <servlet-name>
+        P800738
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.CopyFromSettlement
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.CreateTest
+      </display-name>
+      <servlet-name>
+        P800740
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.CreateTest
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.InsertAcces
+      </display-name>
+      <servlet-name>
+        P800741
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.InsertAcces
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.CashBankOperations
+      </display-name>
+      <servlet-name>
+        P800746
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.CashBankOperations
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.PriceListCreateAll
+      </display-name>
+      <servlet-name>
+        P800747
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.PriceListCreateAll
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.UpdateMaintenanceScheduled
+      </display-name>
+      <servlet-name>
+        P800999
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.UpdateMaintenanceScheduled
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.EditCCPMeasureValues
+      </display-name>
+      <servlet-name>
+        P801011
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.EditCCPMeasureValues
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.CreateFrom
+      </display-name>
+      <servlet-name>
+        P801017
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.CreateFrom
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportBudgetExportExcel
+      </display-name>
+      <servlet-name>
+        P801053
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportBudgetExportExcel
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.Posted
+      </display-name>
+      <servlet-name>
+        P801070
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.Posted
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.CreateAccountingReport
+      </display-name>
+      <servlet-name>
+        P801126
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.CreateAccountingReport
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportAcctRedirectUtility
+      </display-name>
+      <servlet-name>
+        P801135
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportAcctRedirectUtility
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.DeleteClient
+      </display-name>
+      <servlet-name>
+        P801237
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.DeleteClient
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.ExpenseAPInvoice
+      </display-name>
+      <servlet-name>
+        P801268
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.ExpenseAPInvoice
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.CreateTaxReport
+      </display-name>
+      <servlet-name>
+        P801418
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.CreateTaxReport
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.PrintJR
+      </display-name>
+      <servlet-name>
+        P801431
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.PrintJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.CreateCashFlowStatement
+      </display-name>
+      <servlet-name>
+        P804367
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.CreateCashFlowStatement
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.AddTransaction
+      </display-name>
+      <servlet-name>
+        P89313103AC3C4CC0BF080175CE85AEE9
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.AddTransaction
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.RescheduleProcess
+      </display-name>
+      <servlet-name>
+        P8E86ECAC98194E5985A2E6B5DEC3C870
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.RescheduleProcess
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_reports.ReportReconciliationDetail
+      </display-name>
+      <servlet-name>
+        P90EBD262F5AF41E4ACFFF3FD00D43F61
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_reports.ReportReconciliationDetail
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.AddPaymentFromTransaction
+      </display-name>
+      <servlet-name>
+        P9313D44D9A13480388AD5A55B455EDCB
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.AddPaymentFromTransaction
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.DocTypeMultiple
+      </display-name>
+      <servlet-name>
+        P98AE7DE5E7194CB582F30B8A88C5DA12
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.DocTypeMultiple
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.ProcessGoods
+      </display-name>
+      <servlet-name>
+        PA77797A8D4AE42F0BC46B589CC09402A
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.ProcessGoods
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.ProcessInvoice
+      </display-name>
+      <servlet-name>
+        PA7A562CD91CB42D9977E12B098CBC9EC
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.ProcessInvoice
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.InstancePurpose
+      </display-name>
+      <servlet-name>
+        PB5FE07148F9C4A818027E2C8D628516B
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.InstancePurpose
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.ProcessPaymentProposal
+      </display-name>
+      <servlet-name>
+        PC200D584303B4C9BA59CD232F16610D7
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.ProcessPaymentProposal
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_process.ScheduleProcess
+      </display-name>
+      <servlet-name>
+        PC2FB9E6E16BD4BDEA720399486FA636D
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_process.ScheduleProcess
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.AddOrderOrInvoice
+      </display-name>
+      <servlet-name>
+        PDC6F77826AD54AEF865E47C8FC356143
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.AddOrderOrInvoice
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_reports.ReportReconciliationSummary
+      </display-name>
+      <servlet-name>
+        PE7D054B44F5848B6B6FC5923EBA4E1DE
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_reports.ReportReconciliationSummary
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.AddPaymentFromInvoice
+      </display-name>
+      <servlet-name>
+        PEF9F7381E3984C6CB7BE705C3BAD3E6C
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.AddPaymentFromInvoice
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.ImportBankFile
+      </display-name>
+      <servlet-name>
+        PFE791E7B95E249EEB4CA21A90D5728FB
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.ImportBankFile
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_actionbutton.MatchTransaction
+      </display-name>
+      <servlet-name>
+        PFF73C27402EB45558A1925859CD484F0
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_actionbutton.MatchTransaction
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportParetoProduct
+      </display-name>
+      <servlet-name>
+        R046B5835076D48EFA73A1E0FF4721C7F
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportParetoProduct
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.reports.ordersawaitingdelivery.erpCommon.ad_reports.ReportOrderNotShipped
+      </display-name>
+      <servlet-name>
+        R0AA8445A6B3649A9AC1ED47B7665C95B
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.reports.ordersawaitingdelivery.erpCommon.ad_reports.ReportOrderNotShipped
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportParetoProductLegacy
+      </display-name>
+      <servlet-name>
+        R1000500008
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportParetoProductLegacy
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.ReportVatRegisterJR
+      </display-name>
+      <servlet-name>
+        R1002100041
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.ReportVatRegisterJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.ReportTaxPaymentJR
+      </display-name>
+      <servlet-name>
+        R1002100042
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.ReportTaxPaymentJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportAnnualCertification
+      </display-name>
+      <servlet-name>
+        R1002100043
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportAnnualCertification
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.RptM_Requisition
+      </display-name>
+      <servlet-name>
+        R1004400018
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.RptM_Requisition
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportAgingBalance
+      </display-name>
+      <servlet-name>
+        R1005500000
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportAgingBalance
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportProjectProgress
+      </display-name>
+      <servlet-name>
+        R1005900014
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportProjectProgress
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.reporting.printing.PrintPayments
+      </display-name>
+      <servlet-name>
+        R338B29351B1D41138A09B2103B2B07C8
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.reporting.printing.PrintPayments
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportTrialBalance
+      </display-name>
+      <servlet-name>
+        R800787
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportTrialBalance
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.RptC_Invoice
+      </display-name>
+      <servlet-name>
+        R800793
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.RptC_Invoice
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.RptC_Order
+      </display-name>
+      <servlet-name>
+        R800804
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.RptC_Order
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportExpense
+      </display-name>
+      <servlet-name>
+        R800808
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportExpense
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportDebtPaymentTrack
+      </display-name>
+      <servlet-name>
+        R800810
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportDebtPaymentTrack
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportValuationStock_legacy
+      </display-name>
+      <servlet-name>
+        R800827
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportValuationStock_legacy
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportToInvoiceConsignmentJR
+      </display-name>
+      <servlet-name>
+        R800829
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportToInvoiceConsignmentJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportRefundSalesDimensionalAnalyses
+      </display-name>
+      <servlet-name>
+        R800832
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportRefundSalesDimensionalAnalyses
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportTaxInvoiceJR
+      </display-name>
+      <servlet-name>
+        R800833
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportTaxInvoiceJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.RptC_OrderPO
+      </display-name>
+      <servlet-name>
+        R800834
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.RptC_OrderPO
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportGeneralLedgerJournal
+      </display-name>
+      <servlet-name>
+        R800836
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportGeneralLedgerJournal
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportMaterialTransactionEditionJR
+      </display-name>
+      <servlet-name>
+        R800848
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportMaterialTransactionEditionJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportTotalProductTemplate
+      </display-name>
+      <servlet-name>
+        R800850
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportTotalProductTemplate
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportProjectBuildingSiteJR
+      </display-name>
+      <servlet-name>
+        R800852
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportProjectBuildingSiteJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.GeneralAccountingReports
+      </display-name>
+      <servlet-name>
+        R800856
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.GeneralAccountingReports
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportDebtPayment
+      </display-name>
+      <servlet-name>
+        R800857
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportDebtPayment
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportWarehouseControl
+      </display-name>
+      <servlet-name>
+        R800858
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportWarehouseControl
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.MInOutTraceReports
+      </display-name>
+      <servlet-name>
+        R800860
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.MInOutTraceReports
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.RptMA_CCP_Group
+      </display-name>
+      <servlet-name>
+        R800871
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.RptMA_CCP_Group
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.RptMA_CCP_Measures
+      </display-name>
+      <servlet-name>
+        R800872
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.RptMA_CCP_Measures
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.RptC_Bpartner
+      </display-name>
+      <servlet-name>
+        R800873
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.RptC_Bpartner
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportProductMovement
+      </display-name>
+      <servlet-name>
+        R800881
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportProductMovement
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportShipmentDimensionalAnalyzeJR
+      </display-name>
+      <servlet-name>
+        R800889
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportShipmentDimensionalAnalyzeJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportPricelist
+      </display-name>
+      <servlet-name>
+        R800892
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportPricelist
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportGeneralLedger
+      </display-name>
+      <servlet-name>
+        R800941
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportGeneralLedger
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportBudgetGenerateExcel
+      </display-name>
+      <servlet-name>
+        R801050
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportBudgetGenerateExcel
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportShipper
+      </display-name>
+      <servlet-name>
+        R801104
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportShipper
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportRefundSalesDimensionalAnalysesPDF
+      </display-name>
+      <servlet-name>
+        R801111
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportRefundSalesDimensionalAnalysesPDF
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.RptC_Remittance
+      </display-name>
+      <servlet-name>
+        R801140
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.RptC_Remittance
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportOffer
+      </display-name>
+      <servlet-name>
+        R801238
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportOffer
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportCashflowForecast
+      </display-name>
+      <servlet-name>
+        R801262
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportCashflowForecast
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportProductionCost
+      </display-name>
+      <servlet-name>
+        R801296
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportProductionCost
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportNotPosted
+      </display-name>
+      <servlet-name>
+        R801415
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportNotPosted
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportProductionRunJR
+      </display-name>
+      <servlet-name>
+        R801700
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportProductionRunJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportProductionJR
+      </display-name>
+      <servlet-name>
+        R801703
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportProductionJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceCustomerJR
+      </display-name>
+      <servlet-name>
+        R801704
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceCustomerJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportSalesOrderJR
+      </display-name>
+      <servlet-name>
+        R801706
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportSalesOrderJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportWorkRequirementJR
+      </display-name>
+      <servlet-name>
+        R801707
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportWorkRequirementJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportOrderNotInvoiceJR
+      </display-name>
+      <servlet-name>
+        R801708
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportOrderNotInvoiceJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportGuaranteeDateJR
+      </display-name>
+      <servlet-name>
+        R801709
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportGuaranteeDateJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceVendorJR
+      </display-name>
+      <servlet-name>
+        R801710
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceVendorJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportPurchaseDimensionalAnalysesJR
+      </display-name>
+      <servlet-name>
+        R801711
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportPurchaseDimensionalAnalysesJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportMaterialDimensionalAnalysesJR
+      </display-name>
+      <servlet-name>
+        R801712
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportMaterialDimensionalAnalysesJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceVendorDimensionalAnalysesJR
+      </display-name>
+      <servlet-name>
+        R801713
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceVendorDimensionalAnalysesJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportSalesDimensionalAnalyzeJR
+      </display-name>
+      <servlet-name>
+        R801714
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportSalesDimensionalAnalyzeJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportWarehousePartnerJR
+      </display-name>
+      <servlet-name>
+        R801715
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportWarehousePartnerJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.RptC_ProposalJr
+      </display-name>
+      <servlet-name>
+        R801720
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.RptC_ProposalJr
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportSalesOrderInvoicedJasper
+      </display-name>
+      <servlet-name>
+        R801723
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportSalesOrderInvoicedJasper
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportCashJR
+      </display-name>
+      <servlet-name>
+        R801724
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportCashJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportSalesOrderProvidedJR
+      </display-name>
+      <servlet-name>
+        R801725
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportSalesOrderProvidedJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpReports.RptMA_ProcessPlan
+      </display-name>
+      <servlet-name>
+        R801727
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpReports.RptMA_ProcessPlan
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportSalesOrderOpenItemJR
+      </display-name>
+      <servlet-name>
+        R801728
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportSalesOrderOpenItemJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceDiscountJR
+      </display-name>
+      <servlet-name>
+        R801729
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceDiscountJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportWorkRequirementDaily
+      </display-name>
+      <servlet-name>
+        R801734
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportWorkRequirementDaily
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportShipmentEditionJR
+      </display-name>
+      <servlet-name>
+        R801735
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportShipmentEditionJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportPendingProductionJr
+      </display-name>
+      <servlet-name>
+        R801736
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportPendingProductionJr
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportProjectProfitabilityJR
+      </display-name>
+      <servlet-name>
+        R801737
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportProjectProfitabilityJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportBankJR
+      </display-name>
+      <servlet-name>
+        R801738
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportBankJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportInvoicesJR
+      </display-name>
+      <servlet-name>
+        R801739
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportInvoicesJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportStandardCostJR
+      </display-name>
+      <servlet-name>
+        R801964
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportStandardCostJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceCustomerDimensionalAnalysesJR_legacy
+      </display-name>
+      <servlet-name>
+        R801969
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceCustomerDimensionalAnalysesJR_legacy
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceCustomerDimensionalAnalysesJR
+      </display-name>
+      <servlet-name>
+        R970E07E33FD1412D84D9155EBBAD4E0B
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportInvoiceCustomerDimensionalAnalysesJR
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportValuationStock
+      </display-name>
+      <servlet-name>
+        RB143F9E8D1D449CFAEC4B4E19422B524
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportValuationStock
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.financial.paymentreport.erpCommon.ad_reports.PaymentReport
+      </display-name>
+      <servlet-name>
+        RBA8D4904244F4983AA09EDA84FDD1E7C
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.financial.paymentreport.erpCommon.ad_reports.PaymentReport
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportGeneralLedgerJournalDetail
+      </display-name>
+      <servlet-name>
+        RD8CFF08E85FF4B39A9E841EC2FA20017
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportGeneralLedgerJournalDetail
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_reports.ReportTrialBalanceDetail
+      </display-name>
+      <servlet-name>
+        RFF808181316BE3F001316C15D3D1000D
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_reports.ReportTrialBalanceDetail
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.BusinessPartner
+      </display-name>
+      <servlet-name>
+        S800001
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.BusinessPartner
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.DebtPayment
+      </display-name>
+      <servlet-name>
+        S800002
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.DebtPayment
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.Invoice
+      </display-name>
+      <servlet-name>
+        S800003
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.Invoice
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.Product
+      </display-name>
+      <servlet-name>
+        S800004
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.Product
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.Project
+      </display-name>
+      <servlet-name>
+        S800005
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.Project
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.SalesOrder
+      </display-name>
+      <servlet-name>
+        S800006
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.SalesOrder
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.SalesOrderLine
+      </display-name>
+      <servlet-name>
+        S800007
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.SalesOrderLine
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.ShipmentReceiptLine
+      </display-name>
+      <servlet-name>
+        S800008
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.ShipmentReceiptLine
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.BusinessPartnerMultiple
+      </display-name>
+      <servlet-name>
+        S800779
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.BusinessPartnerMultiple
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.ImageInfo
+      </display-name>
+      <servlet-name>
+        S800780
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.ImageInfo
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.ProductMultiple
+      </display-name>
+      <servlet-name>
+        S800781
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.ProductMultiple
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.AttributeSetInstance
+      </display-name>
+      <servlet-name>
+        S800785
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.AttributeSetInstance
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_help.DisplayHelp
+      </display-name>
+      <servlet-name>
+        S801005
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_help.DisplayHelp
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.ShipmentReceipt
+      </display-name>
+      <servlet-name>
+        S801306
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.ShipmentReceipt
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.InvoiceLine
+      </display-name>
+      <servlet-name>
+        S801307
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.InvoiceLine
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.Account
+      </display-name>
+      <servlet-name>
+        S801408
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.Account
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.ProductComplete
+      </display-name>
+      <servlet-name>
+        S801410
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.ProductComplete
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.Locator
+      </display-name>
+      <servlet-name>
+        S801412
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.Locator
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.Location
+      </display-name>
+      <servlet-name>
+        S801413
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.Location
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.AccountElementValue
+      </display-name>
+      <servlet-name>
+        SAA14992C2E4F11DEABB39BCF3C415EF2
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.AccountElementValue
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.info.ProductComplete
+      </display-name>
+      <servlet-name>
+        SD0DDB9CF4F6145ADA5C57E4D3D1BA273
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.info.ProductComplete
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.PopupLoading
+      </display-name>
+      <servlet-name>
+        X1000080000
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.PopupLoading
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.ShowSessionPreferences
+      </display-name>
+      <servlet-name>
+        X1003100000
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.ShowSessionPreferences
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.ShowSessionVariables
+      </display-name>
+      <servlet-name>
+        X1003100002
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.ShowSessionVariables
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.RequisitionToOrder
+      </display-name>
+      <servlet-name>
+        X1004400019
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.RequisitionToOrder
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.Registration
+      </display-name>
+      <servlet-name>
+        X1005800000
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.Registration
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.Heartbeat
+      </display-name>
+      <servlet-name>
+        X1005800001
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.Heartbeat
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_forms.Transactions
+      </display-name>
+      <servlet-name>
+        X3E8AA61941634BBE8584C98881DF76D0
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_forms.Transactions
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.ModuleManagement
+      </display-name>
+      <servlet-name>
+        X56E9E18D3BAE6828E040007F01001BAD
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.ModuleManagement
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.InitialOrgSetup
+      </display-name>
+      <servlet-name>
+        X5849002C5F0854C3E040007F0100223C
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.InitialOrgSetup
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.UpdateReferenceData
+      </display-name>
+      <servlet-name>
+        X58BBAEA919719ACFE040007F01002A1D
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.UpdateReferenceData
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.InstanceManagement
+      </display-name>
+      <servlet-name>
+        X6AE5F2D3163C178BE040007F010174B7
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.InstanceManagement
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.InitialClientSetup
+      </display-name>
+      <servlet-name>
+        X800524
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.InitialClientSetup
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.SQLExecutor
+      </display-name>
+      <servlet-name>
+        X800541
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.SQLExecutor
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.PoolStatus
+      </display-name>
+      <servlet-name>
+        X800655
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.PoolStatus
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.ServletSetPriority
+      </display-name>
+      <servlet-name>
+        X800656
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.ServletSetPriority
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.ReferencedLink
+      </display-name>
+      <servlet-name>
+        X800657
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.ReferencedLink
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.base.secureApp.LoginHandler
+      </display-name>
+      <servlet-name>
+        X800658
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.base.secureApp.LoginHandler
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.base.secureApp.ServletGoBack
+      </display-name>
+      <servlet-name>
+        X800659
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.base.secureApp.ServletGoBack
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.businessUtility.PrinterReports
+      </display-name>
+      <servlet-name>
+        X800660
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.businessUtility.PrinterReports
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.businessUtility.TabAttachments
+      </display-name>
+      <servlet-name>
+        X800661
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.businessUtility.TabAttachments
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.security.Login
+      </display-name>
+      <servlet-name>
+        X800665
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.security.Login
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.VerticalMenu
+      </display-name>
+      <servlet-name>
+        X800667
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.VerticalMenu
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.UsedByLink
+      </display-name>
+      <servlet-name>
+        X800669
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.UsedByLink
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.WindowTree
+      </display-name>
+      <servlet-name>
+        X800671
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.WindowTree
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.ActionButton_Responser
+      </display-name>
+      <servlet-name>
+        X800681
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.ActionButton_Responser
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.Translation
+      </display-name>
+      <servlet-name>
+        X801145
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.Translation
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.utility.DynamicJS
+      </display-name>
+      <servlet-name>
+        X801429
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.utility.DynamicJS
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.base.secureApp.ErrorConnection
+      </display-name>
+      <servlet-name>
+        X801430
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.base.secureApp.ErrorConnection
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.security.Logout
+      </display-name>
+      <servlet-name>
+        X801698
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.security.Logout
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.security.Menu
+      </display-name>
+      <servlet-name>
+        X801699
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.security.Menu
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.CallAcctServer
+      </display-name>
+      <servlet-name>
+        X801948
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.CallAcctServer
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.GenerateInvoicesmanual
+      </display-name>
+      <servlet-name>
+        X801949
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.GenerateInvoicesmanual
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.GenerateShipmentsmanual
+      </display-name>
+      <servlet-name>
+        X801950
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.GenerateShipmentsmanual
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_forms.MaterialReceiptPending
+      </display-name>
+      <servlet-name>
+        X801951
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_forms.MaterialReceiptPending
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.businessUtility.AuditTrailPopup
+      </display-name>
+      <servlet-name>
+        X9EDAD41A950B4A2A9CFB20151E1D4FA1
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.businessUtility.AuditTrailPopup
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.erpCommon.ad_actionButton.ActionButtonJava_Responser
+      </display-name>
+      <servlet-name>
+        XC020D3065FCC48C7BF34238EDBB6A45B
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.erpCommon.ad_actionButton.ActionButtonJava_Responser
+      </servlet-class>
+      
+      
+    </servlet>
+  
+    <servlet>
+      <display-name>
+        org.openbravo.advpaymentmngt.ad_forms.BatchPaymentExecution
+      </display-name>
+      <servlet-name>
+        XF9CAF92FC3A84BAD8644B0006EF483FB
+      </servlet-name>
+      <servlet-class>
+        org.openbravo.advpaymentmngt.ad_forms.BatchPaymentExecution
+      </servlet-class>
+      
+      
+    </servlet>
+  
+
+
+  
+  
+    <filter-mapping>
+      <filter-name>
+        M36A67D2D76A5488491850AF14F83A6FF
+      </filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+  
+    <filter-mapping>
+      <filter-name>
+        MFF808181332A531601332A63F89D0007
+      </filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+  
+    <filter-mapping>
+      <filter-name>
+        MCD9445A64E6B435AA70BFF526289C69B
+      </filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+  
+    <filter-mapping>
+      <filter-name>
+        MDF2601D0FF9041F49B069600B7603FE0
+      </filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+  
+  
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800076
+      </servlet-name>
+      <url-pattern>/Amortization/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800204
+      </servlet-name>
+      <url-pattern>/AssetGroup/Accounting_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800078
+      </servlet-name>
+      <url-pattern>/Assets/Assets_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W319
+      </servlet-name>
+      <url-pattern>/BillofMaterialsProduction/BOMProduction_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800205
+      </servlet-name>
+      <url-pattern>/Budget/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W323
+      </servlet-name>
+      <url-pattern>/BusinessPartnerCategory/Accounting_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W355
+      </servlet-name>
+      <url-pattern>/Commission/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W362
+      </servlet-name>
+      <url-pattern>/CommissionPayment/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W45A6D51BFBB74C079AC559A4240A296D
+      </servlet-name>
+      <url-pattern>/CostAdjustment/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W9D859A2A50F44562AFA21AAF2DF91B8A
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngtDoubtfulDebt/DoubtfulDebt9D859A2A50F44562AFA21AAF2DF91B8A_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WFA66A130BE8B48E88BF4F5A6E2FA0CDD
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngtDoubtfulDebtRun/DoubtfulDebtRunFA66A130BE8B48E88BF4F5A6E2FA0CDD_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WE4DC11F751F34F0DAE11A4D856CD99EB
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngtDoubtfulDebtRun/DoubtfulDebtE4DC11F751F34F0DAE11A4D856CD99EB_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W97E1F35BE08840AFB1DA4FE66D329542
+      </servlet-name>
+      <url-pattern>/EndYearClose/EndYearClose_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W412
+      </servlet-name>
+      <url-pattern>/ExpenseSheet/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W23691259D1BD4496BCC5F32645BCA4B9
+      </servlet-name>
+      <url-pattern>/FinancialAccount/Transaction_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WC56E698100314ABBBBD3A89626CA551C
+      </servlet-name>
+      <url-pattern>/FinancialAccount/ImportedBankStatements_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WFF8080813320657F0133209DE21B0042
+      </servlet-name>
+      <url-pattern>/FinancialAccount/ReconciliationsFF8080813320657F0133209DE21B0042_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W129
+      </servlet-name>
+      <url-pattern>/FiscalCalendar/Year_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W252
+      </servlet-name>
+      <url-pattern>/GeneralLedgerConfiguration/Defaults_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W159
+      </servlet-name>
+      <url-pattern>/GLJournal/Batch_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W160
+      </servlet-name>
+      <url-pattern>/GLJournal/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W161
+      </servlet-name>
+      <url-pattern>/GLJournal/Lines_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W259
+      </servlet-name>
+      <url-pattern>/GoodsMovements/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W296
+      </servlet-name>
+      <url-pattern>/GoodsReceipt/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W297
+      </servlet-name>
+      <url-pattern>/GoodsReceipt/Lines_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W257
+      </servlet-name>
+      <url-pattern>/GoodsShipment/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W258
+      </servlet-name>
+      <url-pattern>/GoodsShipment/Lines_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800230
+      </servlet-name>
+      <url-pattern>/IndirectCost/Value_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800202
+      </servlet-name>
+      <url-pattern>/InternalConsumption/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WF25CBC61CDD64F5E8A6FDC41C6E23C96
+      </servlet-name>
+      <url-pattern>/LandedCost/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W1C05058D61AC4B69A7E550F32F9F2873
+      </servlet-name>
+      <url-pattern>/LandedCost/Cost_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W112
+      </servlet-name>
+      <url-pattern>/Language/Language_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W1004400001
+      </servlet-name>
+      <url-pattern>/ManageRequisitions/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W1004400002
+      </servlet-name>
+      <url-pattern>/ManageRequisitions/Lines_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800255
+      </servlet-name>
+      <url-pattern>/ManufacturingPlan/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800257
+      </servlet-name>
+      <url-pattern>/ManufacturingPlan/Lines_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W408
+      </servlet-name>
+      <url-pattern>/MatchedInvoices/MatchedInvoice_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W157
+      </servlet-name>
+      <url-pattern>/MultiphaseProject/MultiphaseProject_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W478
+      </servlet-name>
+      <url-pattern>/MultiphaseProject/ProjectPhase_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W143
+      </servlet-name>
+      <url-pattern>/Organization/Organization_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WC4B6506838E14A349D6717D6856F1B56
+      </servlet-name>
+      <url-pattern>/PaymentIn/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WF7A52FDAAA0346EFA07D53C125B40404
+      </servlet-name>
+      <url-pattern>/PaymentOut/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800161
+      </servlet-name>
+      <url-pattern>/PeriodicQualityControlData/Test_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W255
+      </servlet-name>
+      <url-pattern>/PhysicalInventory/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W238
+      </servlet-name>
+      <url-pattern>/PriceList/PriceListVersion_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800110
+      </servlet-name>
+      <url-pattern>/ProcessPlan/IOProducts_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W180
+      </servlet-name>
+      <url-pattern>/Product/Product_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W324
+      </servlet-name>
+      <url-pattern>/ProductCategory/Accounting_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WC9B5394DBA8C465C9CE26A361696B06E
+      </servlet-name>
+      <url-pattern>/ProductionRun/ProductionRun_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W290
+      </servlet-name>
+      <url-pattern>/PurchaseInvoice/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W291
+      </servlet-name>
+      <url-pattern>/PurchaseInvoice/Lines_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W294
+      </servlet-name>
+      <url-pattern>/PurchaseOrder/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W293
+      </servlet-name>
+      <url-pattern>/PurchaseOrder/Lines_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800258
+      </servlet-name>
+      <url-pattern>/PurchasingPlan/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800158
+      </servlet-name>
+      <url-pattern>/QualityControlReport/DateandShift_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800154
+      </servlet-name>
+      <url-pattern>/QualityControlReport/Time_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800249
+      </servlet-name>
+      <url-pattern>/Requisition/Requisition_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WAF4090093CFF1431E040007F010048A5
+      </servlet-name>
+      <url-pattern>/ReturnfromCustomer/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W30576C6ABD12419F9D19D497216FC9B8
+      </servlet-name>
+      <url-pattern>/ReturnMaterialReceipt/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W5A5CCFC8359B4D79BA705DC487FE8173
+      </servlet-name>
+      <url-pattern>/ReturntoVendor/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W728DBD16A1F14A4D82335E37BA433E33
+      </servlet-name>
+      <url-pattern>/ReturntoVendorShipment/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W263
+      </servlet-name>
+      <url-pattern>/SalesInvoice/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W270
+      </servlet-name>
+      <url-pattern>/SalesInvoice/Lines_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W186
+      </servlet-name>
+      <url-pattern>/SalesOrder/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W187
+      </servlet-name>
+      <url-pattern>/SalesOrder/Lines_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WF87F1EB7EB404F1F916EBAFAD1A0A334
+      </servlet-name>
+      <url-pattern>/SalesQuotation/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800002
+      </servlet-name>
+      <url-pattern>/ServiceProject/ServiceProject_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800005
+      </servlet-name>
+      <url-pattern>/ServiceProject/Supplier_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800004
+      </servlet-name>
+      <url-pattern>/ServiceProject/Proposal_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W475
+      </servlet-name>
+      <url-pattern>/Session/Session_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W5A6F0ED7230C462BA4010653BA3F816A
+      </servlet-name>
+      <url-pattern>/SimpleGLJournal/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W7797C73348324DCBB7F17666F31C87A5
+      </servlet-name>
+      <url-pattern>/SimpleGLJournal/Lines_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        WD53F675ADB2745059623175D8870A721
+      </servlet-name>
+      <url-pattern>/StockReservation/Reservation_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W100
+      </servlet-name>
+      <url-pattern>/TablesandColumns/Table_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W1002100011
+      </servlet-name>
+      <url-pattern>/TaxPayment/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W105
+      </servlet-name>
+      <url-pattern>/WindowsTabsandFields/Window_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W106
+      </servlet-name>
+      <url-pattern>/WindowsTabsandFields/Tab_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800114
+      </servlet-name>
+      <url-pattern>/WorkEffort/WorkEffort_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800117
+      </servlet-name>
+      <url-pattern>/WorkEffort/ProductionRun_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800111
+      </servlet-name>
+      <url-pattern>/WorkRequirement/Header_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        W800112
+      </servlet-name>
+      <url-pattern>/WorkRequirement/Operation_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+
+  
+    <servlet-mapping>
+      <servlet-name>
+        M09E69919A6B743B085123AC94A96155C
+      </servlet-name>
+      <url-pattern>/info/ProjectMultiple.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M1005200000
+      </servlet-name>
+      <url-pattern>/utility/ChangeAudit</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M166DCDDE740F457792246F2FD3320E62
+      </servlet-name>
+      <url-pattern>/utility/ShowImageLogo</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M1EC03C207CB741AE8C94DBF0340E2429
+      </servlet-name>
+      <url-pattern>/security/SessionActive</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M2DE49388A33B4FBFBA845E4DCF5E83B2
+      </servlet-name>
+      <url-pattern>/businessUtility/MessageJS.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M488B251D70EA4B8784E748836042CD66
+      </servlet-name>
+      <url-pattern>/utility/CheckCleanCache.js</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M589C21D5907E486A9DFC45A2C466DDF7
+      </servlet-name>
+      <url-pattern>/utility/ImageInfoBLOB</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M801168
+      </servlet-name>
+      <url-pattern>/ad_callouts/SL_MInOutTraceReports.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M801388
+      </servlet-name>
+      <url-pattern>/ad_forms/about.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M8993A79B45F8457CB56FC27F084FF5C6
+      </servlet-name>
+      <url-pattern>/utility/GetOpenbravoLogo.png</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M8A935F84A79B45F8457CB91B09764786
+      </servlet-name>
+      <url-pattern>/utility/GetOpenbravoLogoGen.png</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M8B7776CB913C4AA691B099647862D191
+      </servlet-name>
+      <url-pattern>/ws/*</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        M9931DE504494438491E5B89E7F1CF9B7
+      </servlet-name>
+      <url-pattern>/utility/ShowImage</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        MA761FF99519C45D1A4BEE9FA30B40AAC
+      </servlet-name>
+      <url-pattern>/org.openbravo.client.kernel/*</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        MBB540F2CEA514936B5E60216ACE844B3
+      </servlet-name>
+      <url-pattern>/ad_forms/ShowLogFile.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        MCE710B1C239D491F8A7D98407283FACE
+      </servlet-name>
+      <url-pattern>/ad_callouts/SL_CreateLines_Conversion_UOM.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        ME84320A852114BB99050FC4D0A6A006E
+      </servlet-name>
+      <url-pattern>/org.openbravo.service.json.jsonrest/*</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        MEDCEE2B913E94D6AAF17B92CE2672028
+      </servlet-name>
+      <url-pattern>/org.openbravo.service.datasource/*</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P0F3F7B9BC1054B3BAEFC8BC44C55ADF9
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/SelectExpectedPayments.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000100037
+      </servlet-name>
+      <url-pattern>/ad_callouts/ComboReloadsProcessHelper.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500009
+      </servlet-name>
+      <url-pattern>/orders/*</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500009
+      </servlet-name>
+      <url-pattern>/orders/send.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500009
+      </servlet-name>
+      <url-pattern>/orders/PrintOptions.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500009
+      </servlet-name>
+      <url-pattern>/orders/print.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500018
+      </servlet-name>
+      <url-pattern>/invoices/PrintOptions.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500018
+      </servlet-name>
+      <url-pattern>/invoices/send.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500018
+      </servlet-name>
+      <url-pattern>/invoices/print.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500018
+      </servlet-name>
+      <url-pattern>/invoices/*</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500020
+      </servlet-name>
+      <url-pattern>/shipments/print.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500020
+      </servlet-name>
+      <url-pattern>/shipments/PrintOptions.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500020
+      </servlet-name>
+      <url-pattern>/shipments/send.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1000500020
+      </servlet-name>
+      <url-pattern>/shipments/*</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1002100040
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CreateVatRegisters.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1005400022
+      </servlet-name>
+      <url-pattern>/ad_process/TestHeartbeat.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P1006100000
+      </servlet-name>
+      <url-pattern>/utility/OpenPentaho.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P103F72BB0AB846CA984329F18CAD938F
+      </servlet-name>
+      <url-pattern>/ad_process/DisplayJasper.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P143C42B0268F411F8D6AC8475B8A0ABF
+      </servlet-name>
+      <url-pattern>/ad_actionbutton/ExportReferenceData.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P14CF968D43864D6AB6F2CEF1971A785D
+      </servlet-name>
+      <url-pattern>/ad_process/ApplyModulesCallServlet.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P2ED19D9C8B784FA690A7CD6960B22DC1
+      </servlet-name>
+      <url-pattern>/ad_process/UnscheduleProcess.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P30D55DB2422B4CA7B7B2355E1A08EF11
+      </servlet-name>
+      <url-pattern>/ad_process/ApplyModules.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P328EDF326D894E7D8BBA2B06FB07F1EA
+      </servlet-name>
+      <url-pattern>/ad_process/RegisterModule.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P34307064C7DD4040BC9285E723FE3DC5
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/ExecutePayments.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P35F48DA64DB14F0489CC0C9BF6C3A849
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportAssetDepreciationSchedule.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P35F48DA64DB14F0489CC0C9BF6C3A849
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportAssetDepreciationSchedule.jrxml</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P42DBBE8035384E7AB90CD09CAF09AF47
+      </servlet-name>
+      <url-pattern>/servlets/image</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P46A3E47C3F414E948988B487A85FC244
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/Reconciliation.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P550FC091B0F948B39A3D48208C169B23
+      </servlet-name>
+      <url-pattern>/info/LocatorMultiple.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P572786B150B322EFE040007F01006814
+      </servlet-name>
+      <url-pattern>/utility/GenericTreeServlet.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P57E4989019704AB7AA59C82EAB4486D5
+      </servlet-name>
+      <url-pattern>/utility/DownloadReport.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P5BD1584795784B85B4E45757EC54CED7
+      </servlet-name>
+      <url-pattern>/utility/StaticCommunityBranding.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P64FFE615A5BA43DDAA13806DFE228F79
+      </servlet-name>
+      <url-pattern>/ad_actionButton/InvoicePaymentMonitor.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800703
+      </servlet-name>
+      <url-pattern>/ad_actionButton/ProjectClose.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800707
+      </servlet-name>
+      <url-pattern>/ad_actionButton/ExpenseSOrder.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800711
+      </servlet-name>
+      <url-pattern>/ad_actionButton/ProjectCopyFrom.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800712
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CreateRegFactAcct.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800714
+      </servlet-name>
+      <url-pattern>/ad_actionButton/ProjectSetType.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800717
+      </servlet-name>
+      <url-pattern>/ad_process/PrintInvoices.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800722
+      </servlet-name>
+      <url-pattern>/ad_actionButton/DropRegFactAcct.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800723
+      </servlet-name>
+      <url-pattern>/ad_process/CopyFromGLJournal.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800734
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CopyFromInvoice.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800735
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CopyFromOrder.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800736
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CreateFile.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800737
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CreateFromMultiple_FS.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800737
+      </servlet-name>
+      <url-pattern>/ad_ActionButton/CreateFromMultiple_Shipment.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800737
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CreateFromMultiple_F2.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800737
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CreateFromMultiple_F1.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800737
+      </servlet-name>
+      <url-pattern>/ad_ActionButton/CreateFromMultiple_Receipt.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800738
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CopyFromSettlement.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800740
+      </servlet-name>
+      <url-pattern>/ad_process/CreateTest.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800741
+      </servlet-name>
+      <url-pattern>/ad_actionButton/InsertAcces.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800746
+      </servlet-name>
+      <url-pattern>/ad_process/CashBankOperations.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800747
+      </servlet-name>
+      <url-pattern>/ad_process/PriceListCreateAll.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P800999
+      </servlet-name>
+      <url-pattern>/ad_actionButton/UpdateMaintenanceScheduled.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801011
+      </servlet-name>
+      <url-pattern>/ad_actionButton/EditCCPMeasureValues.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801017
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CreateFrom_FS.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801017
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CreateFrom.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801017
+      </servlet-name>
+      <url-pattern>/ad_actionButton/CreateFrom_F1.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801053
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportBudgetExportExcel.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801070
+      </servlet-name>
+      <url-pattern>/ad_actionButton/Posted.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801126
+      </servlet-name>
+      <url-pattern>/ad_process/CreateAccountingReport.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801126
+      </servlet-name>
+      <url-pattern>/ad_process/CreateAccountingReportPopUp.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801135
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportAcctRedirectUtility.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801237
+      </servlet-name>
+      <url-pattern>/ad_process/DeleteClient.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801268
+      </servlet-name>
+      <url-pattern>/ad_process/ExpenseAPInvoice.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801418
+      </servlet-name>
+      <url-pattern>/ad_process/CreateTaxReportPopUp.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801418
+      </servlet-name>
+      <url-pattern>/ad_process/CreateTaxReport.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P801431
+      </servlet-name>
+      <url-pattern>/utility/PrintJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P804367
+      </servlet-name>
+      <url-pattern>/ad_process/CreateCashFlowStatement.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P89313103AC3C4CC0BF080175CE85AEE9
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/AddTransaction.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P8E86ECAC98194E5985A2E6B5DEC3C870
+      </servlet-name>
+      <url-pattern>/ad_process/RescheduleProcess.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P90EBD262F5AF41E4ACFFF3FD00D43F61
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_reports/ReportReconciliationDetail.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P9313D44D9A13480388AD5A55B455EDCB
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/AddPaymentFromTransaction.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        P98AE7DE5E7194CB582F30B8A88C5DA12
+      </servlet-name>
+      <url-pattern>/info/DocTypeMultiple.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        PA77797A8D4AE42F0BC46B589CC09402A
+      </servlet-name>
+      <url-pattern>/org.openbravo.erpCommon.ad_actionButton/ProcessGoods.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        PA7A562CD91CB42D9977E12B098CBC9EC
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/ProcessInvoice.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        PB5FE07148F9C4A818027E2C8D628516B
+      </servlet-name>
+      <url-pattern>/ad_forms/InstancePurpose.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        PC200D584303B4C9BA59CD232F16610D7
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/ProcessPaymentProposal.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        PC2FB9E6E16BD4BDEA720399486FA636D
+      </servlet-name>
+      <url-pattern>/ad_process/ScheduleProcess.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        PDC6F77826AD54AEF865E47C8FC356143
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/AddOrderOrInvoice.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        PE7D054B44F5848B6B6FC5923EBA4E1DE
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_reports/ReportReconciliationSummary.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        PEF9F7381E3984C6CB7BE705C3BAD3E6C
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/AddPaymentFromInvoice.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        PFE791E7B95E249EEB4CA21A90D5728FB
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/ImportBankFile.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        PFF73C27402EB45558A1925859CD484F0
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_actionbutton/MatchTransaction.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R046B5835076D48EFA73A1E0FF4721C7F
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportParetoProduct.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R0AA8445A6B3649A9AC1ED47B7665C95B
+      </servlet-name>
+      <url-pattern>/org.openbravo.reports.ordersawaitingdelivery.ad_reports/ReportOrderNotShipped.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R0AA8445A6B3649A9AC1ED47B7665C95B
+      </servlet-name>
+      <url-pattern>/org.openbravo.reports.ordersawaitingdelivery.ad_reports/ReportOrderNotShipped.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R1000500008
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportParetoProductLegacy.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R1002100041
+      </servlet-name>
+      <url-pattern>/ReportRegisterFilter.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R1002100042
+      </servlet-name>
+      <url-pattern>/ReportPaymentFilter.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R1002100043
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportAnnualCertification.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R1002100043
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportAnnualCertification.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R1002100043
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportAnnualCertification.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R1004400018
+      </servlet-name>
+      <url-pattern>/RptM_Requisition.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R1005500000
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportAgingBalance.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R1005900014
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportProjectProgress.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R1005900014
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportProjectProgress.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R338B29351B1D41138A09B2103B2B07C8
+      </servlet-name>
+      <url-pattern>/payments/print.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R338B29351B1D41138A09B2103B2B07C8
+      </servlet-name>
+      <url-pattern>/payments/send.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R338B29351B1D41138A09B2103B2B07C8
+      </servlet-name>
+      <url-pattern>/payments/PrintOptions.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R338B29351B1D41138A09B2103B2B07C8
+      </servlet-name>
+      <url-pattern>/payments/*</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800787
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportTrialBalancePDF.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800787
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportTrialBalance.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800787
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportTrialBalanceExcel.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800793
+      </servlet-name>
+      <url-pattern>/RptC_InvoiceLines.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800793
+      </servlet-name>
+      <url-pattern>/RptC_Invoice.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800804
+      </servlet-name>
+      <url-pattern>/RptC_OrderLines.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800804
+      </servlet-name>
+      <url-pattern>/RptC_Order.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800808
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportExpense.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800810
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportDebtPaymentTrack.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800827
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportValuationStock_legacy.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800829
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportToInvoiceConsignmentJR.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800829
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportToInvoiceConsignmentJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800832
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportRefundSalesDimensionalAnalysesEdition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800832
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportRefundSalesDimensionalAnalysesFilter.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800833
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportTaxInvoice_Excel.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800833
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportTaxInvoice.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800834
+      </servlet-name>
+      <url-pattern>/RptC_OrderPODeliverynotes.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800834
+      </servlet-name>
+      <url-pattern>/RptC_OrderPOLines.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800834
+      </servlet-name>
+      <url-pattern>/RptC_OrderPODescription.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800834
+      </servlet-name>
+      <url-pattern>/RptC_OrderPO.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800836
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportGeneralLedgerJournal.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800836
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportGeneralLedgerJournalPDF.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800836
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportGeneralLedgerJournal.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800848
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportMaterialTransactionEditionJR.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800848
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportMaterialTransactionFilter.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800848
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportMaterialTransactionEditionJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800850
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportTotalProductTemplate.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800852
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportProjectBuildingSiteJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800852
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportProjectBuildingSiteJR.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800856
+      </servlet-name>
+      <url-pattern>/ad_reports/GeneralAccountingReportsPDF</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800856
+      </servlet-name>
+      <url-pattern>/ad_reports/GeneralAccountingReports.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800856
+      </servlet-name>
+      <url-pattern>/ad_reports/GeneralAccountingReports.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800857
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportDebtPayment.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800858
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportWarehouseControl.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800860
+      </servlet-name>
+      <url-pattern>/ad_reports/MInOutTraceReports.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800871
+      </servlet-name>
+      <url-pattern>/RptMA_CCP_Group.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800872
+      </servlet-name>
+      <url-pattern>/RptMA_CCP_Measures_Hours.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800872
+      </servlet-name>
+      <url-pattern>/RptMA_CCP_Measures_Values.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800872
+      </servlet-name>
+      <url-pattern>/RptMA_CCP_Measures.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800873
+      </servlet-name>
+      <url-pattern>/RptC_Bpartner.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800873
+      </servlet-name>
+      <url-pattern>/RptC_Bpartner.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800881
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportProductMovement.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800889
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportShipmentDimensionalAnalyzeJRFilter.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800889
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportShipmentDimensionalAnalyzeJREdition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800892
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportPricelist.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800892
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportPricelist.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800941
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportGeneralLedgerExcel.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800941
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportGeneralLedger.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R800941
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportGeneralLedgerPDF.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801050
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportBudgetGenerateExcelXLS.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801050
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportBudgetGenerateExcel.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801104
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportShipper.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801111
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportRefundSales.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801111
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportRefundSales.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801140
+      </servlet-name>
+      <url-pattern>/RptC_Remittance.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801140
+      </servlet-name>
+      <url-pattern>/RptC_RemittanceHeader.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801140
+      </servlet-name>
+      <url-pattern>/RptC_RemittanceLines.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801238
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportOffer.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801262
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportCashflowForecast.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801296
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportProductionCost.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801415
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportNotPosted.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801700
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportProductionRunJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801703
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportProductionJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801704
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoiceCustomerFilterJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801706
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportSalesOrderJR.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801706
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportSalesOrderFilterJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801707
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportWorkRequirementJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801708
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportOrderNotInvoiceFilterJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801709
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportGuaranteeDateJR.jrxml</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801709
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportGuaranteeDateJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801710
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoiceVendorFilterJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801711
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportPurchaseDimensionalAnalysesFilterJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801711
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportPurchaseDimensionalJR.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801712
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportMaterialDimensionalAnalysesFilterJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801713
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoiceVendorDimensionalAnalysesXLS.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801713
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoiceVendorDimensionalAnalysesFilterJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801714
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportSalesDimensionalAnalyzeJRFilter.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801715
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportWarehousePartnerJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801720
+      </servlet-name>
+      <url-pattern>/RptC_ProposalJr.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801723
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportSalesOrderInvoicedJasperPop.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801723
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportSalesOrderInvoicedJasper.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801724
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportCashJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801725
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportSalesOrderProvidedJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801725
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportSalesOrderProvidedJRPop.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801727
+      </servlet-name>
+      <url-pattern>/RptMA_ProcessPlan.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801727
+      </servlet-name>
+      <url-pattern>/RptMA_ProcessPlanJR.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801728
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportSalesOrderOpenItemJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801729
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoiceDiscountJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801734
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportWorkRequirementDaily.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801735
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportShipmentEditionJR.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801735
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportShipmentFilterJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801735
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportShipmentEditionJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801736
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportPendingProductionEditJr.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801736
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportPendingProductionJr.jrxml</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801736
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportPendingProductionJr.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801737
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportProjectProfitabilityJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801737
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportProjectProfitabilityJR.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801738
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportBankJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801739
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoicesJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801964
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportStandardCostJR.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801969
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoiceCustomerDimensionalAnalysesJRFilter_legacy.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R801969
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoiceCustomerDimensionalAnalysesJREdition_legacy.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R970E07E33FD1412D84D9155EBBAD4E0B
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoiceCustomerDimensionalAnalysesXLS.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R970E07E33FD1412D84D9155EBBAD4E0B
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoiceCustomerDimensionalAnalysesJREdition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        R970E07E33FD1412D84D9155EBBAD4E0B
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportInvoiceCustomerDimensionalAnalysesJRFilter.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        RB143F9E8D1D449CFAEC4B4E19422B524
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportValuationStock.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        RB143F9E8D1D449CFAEC4B4E19422B524
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportValuationStock.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        RB143F9E8D1D449CFAEC4B4E19422B524
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportValuationStock.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        RBA8D4904244F4983AA09EDA84FDD1E7C
+      </servlet-name>
+      <url-pattern>/org.openbravo.financial.paymentreport/erpCommon/ad_reports/PaymentReportPDF.pdf</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        RBA8D4904244F4983AA09EDA84FDD1E7C
+      </servlet-name>
+      <url-pattern>/org.openbravo.financial.paymentreport/erpCommon/ad_reports/PaymentReportExcel.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        RBA8D4904244F4983AA09EDA84FDD1E7C
+      </servlet-name>
+      <url-pattern>/org.openbravo.financial.paymentreport/erpCommon/ad_reports/PaymentReport.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        RD8CFF08E85FF4B39A9E841EC2FA20017
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportGeneralLedgerJournalDetail.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        RFF808181316BE3F001316C15D3D1000D
+      </servlet-name>
+      <url-pattern>/ad_reports/ReportTrialBalanceDetail.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800001
+      </servlet-name>
+      <url-pattern>/info/BusinessPartner.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800002
+      </servlet-name>
+      <url-pattern>/info/DebtPayment.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800003
+      </servlet-name>
+      <url-pattern>/info/Invoice.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800004
+      </servlet-name>
+      <url-pattern>/info/Product.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800005
+      </servlet-name>
+      <url-pattern>/info/Project.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800006
+      </servlet-name>
+      <url-pattern>/info/SalesOrder.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800007
+      </servlet-name>
+      <url-pattern>/info/SalesOrderLine.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800008
+      </servlet-name>
+      <url-pattern>/info/ShipmentReceiptLine.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800779
+      </servlet-name>
+      <url-pattern>/info/BusinessPartnerMultiple_F2.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800779
+      </servlet-name>
+      <url-pattern>/info/BusinessPartnerMultiple_F1.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800779
+      </servlet-name>
+      <url-pattern>/info/BusinessPartnerMultiple_F3.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800779
+      </servlet-name>
+      <url-pattern>/info/BusinessPartnerMultiple.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800779
+      </servlet-name>
+      <url-pattern>/info/BusinessPartnerMultiple_FS.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800780
+      </servlet-name>
+      <url-pattern>/info/ImageInfo.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800781
+      </servlet-name>
+      <url-pattern>/info/ProductMultiple_FS.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800781
+      </servlet-name>
+      <url-pattern>/info/ProductMultiple.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800781
+      </servlet-name>
+      <url-pattern>/info/ProductMultiple_F2.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800781
+      </servlet-name>
+      <url-pattern>/info/ProductMultiple_F1.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800781
+      </servlet-name>
+      <url-pattern>/info/ProductMultiple_F3.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S800785
+      </servlet-name>
+      <url-pattern>/info/AttributeSetInstance.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S801005
+      </servlet-name>
+      <url-pattern>/ad_help/DisplayHelp.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S801306
+      </servlet-name>
+      <url-pattern>/info/ShipmentReceipt.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S801307
+      </servlet-name>
+      <url-pattern>/info/InvoiceLine.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S801408
+      </servlet-name>
+      <url-pattern>/info/Account.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S801412
+      </servlet-name>
+      <url-pattern>/info/Locator.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S801412
+      </servlet-name>
+      <url-pattern>/info/Locator_FS.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S801413
+      </servlet-name>
+      <url-pattern>/info/Location_F2.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S801413
+      </servlet-name>
+      <url-pattern>/info/Location_F3.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S801413
+      </servlet-name>
+      <url-pattern>/info/Location_F1.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        S801413
+      </servlet-name>
+      <url-pattern>/info/Location_FS.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        SAA14992C2E4F11DEABB39BCF3C415EF2
+      </servlet-name>
+      <url-pattern>/info/AccountElementValue.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        SD0DDB9CF4F6145ADA5C57E4D3D1BA273
+      </servlet-name>
+      <url-pattern>/info/ProductComplete.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X1000080000
+      </servlet-name>
+      <url-pattern>/utility/PopupLoading.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X1003100000
+      </servlet-name>
+      <url-pattern>/ad_forms/ShowSessionPreferences.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X1003100002
+      </servlet-name>
+      <url-pattern>/ad_forms/ShowSessionVariables.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X1004400019
+      </servlet-name>
+      <url-pattern>/ad_forms/RequisitionToOrder.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X1004400019
+      </servlet-name>
+      <url-pattern>/ad_forms/RequisitionToOrderCreate.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X1005800000
+      </servlet-name>
+      <url-pattern>/ad_forms/Registration.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X1005800001
+      </servlet-name>
+      <url-pattern>/ad_forms/Heartbeat.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X3E8AA61941634BBE8584C98881DF76D0
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_forms/Transactions.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X56E9E18D3BAE6828E040007F01001BAD
+      </servlet-name>
+      <url-pattern>/ad_forms/ModuleManagement.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X5849002C5F0854C3E040007F0100223C
+      </servlet-name>
+      <url-pattern>/ad_forms/InitialOrgSetup.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X58BBAEA919719ACFE040007F01002A1D
+      </servlet-name>
+      <url-pattern>/ad_forms/UpdateReferenceData.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X6AE5F2D3163C178BE040007F010174B7
+      </servlet-name>
+      <url-pattern>/ad_forms/InstanceManagement.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800524
+      </servlet-name>
+      <url-pattern>/ad_forms/InitialClientSetup.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800541
+      </servlet-name>
+      <url-pattern>/ad_forms/SQLExecutor.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800541
+      </servlet-name>
+      <url-pattern>/ad_forms/SQLExecutor_Excel.xls</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800655
+      </servlet-name>
+      <url-pattern>/utility/PoolStatus.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800656
+      </servlet-name>
+      <url-pattern>/utility/SetPriority.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800657
+      </servlet-name>
+      <url-pattern>/utility/ReferencedLink.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800658
+      </servlet-name>
+      <url-pattern>/secureApp/LoginHandler.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800659
+      </servlet-name>
+      <url-pattern>/secureApp/GoBack.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800660
+      </servlet-name>
+      <url-pattern>/businessUtility/PrinterReports.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800661
+      </servlet-name>
+      <url-pattern>/businessUtility/TabAttachments_Edition.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800661
+      </servlet-name>
+      <url-pattern>/businessUtility/TabAttachments_F1.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800661
+      </servlet-name>
+      <url-pattern>/businessUtility/TabAttachments_FS.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800665
+      </servlet-name>
+      <url-pattern>/security/Login_Welcome.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800665
+      </servlet-name>
+      <url-pattern>/utility/Log.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800665
+      </servlet-name>
+      <url-pattern>/security/Login_Logo.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800665
+      </servlet-name>
+      <url-pattern>/security/Login_FS.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800665
+      </servlet-name>
+      <url-pattern>/security/Login</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800665
+      </servlet-name>
+      <url-pattern>/security/Login_F0.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800665
+      </servlet-name>
+      <url-pattern>/security/Login_Options_F1.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800665
+      </servlet-name>
+      <url-pattern>/security/Login_F1.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800667
+      </servlet-name>
+      <url-pattern>/utility/VerticalMenu.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800669
+      </servlet-name>
+      <url-pattern>/utility/UsedByLink.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800669
+      </servlet-name>
+      <url-pattern>/utility/UsedByLink_Detail.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800671
+      </servlet-name>
+      <url-pattern>/utility/WindowTree.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X800681
+      </servlet-name>
+      <url-pattern>/ad_actionButton/ActionButton_Responser.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801145
+      </servlet-name>
+      <url-pattern>/ad_forms/Translation.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801429
+      </servlet-name>
+      <url-pattern>/utility/MessagesJS.js</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801429
+      </servlet-name>
+      <url-pattern>/utility/DynamicJS.js</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801430
+      </servlet-name>
+      <url-pattern>/ErrorConnection.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801698
+      </servlet-name>
+      <url-pattern>/security/Logout.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801699
+      </servlet-name>
+      <url-pattern>/security/Menu.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801948
+      </servlet-name>
+      <url-pattern>/ad_forms/CallAcctServer.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801949
+      </servlet-name>
+      <url-pattern>/ad_forms/GenerateInvoicesmanual.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801949
+      </servlet-name>
+      <url-pattern>/ad_forms/CreateInvoicesfromOrders.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801950
+      </servlet-name>
+      <url-pattern>/ad_forms/GenerateShipmentsmanual.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801950
+      </servlet-name>
+      <url-pattern>/ad_forms/CreateShipmentsfromOrders.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801951
+      </servlet-name>
+      <url-pattern>/ad_forms/PendingGoodsReceipts.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X801951
+      </servlet-name>
+      <url-pattern>/ad_forms/MaterialReceiptPending.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        X9EDAD41A950B4A2A9CFB20151E1D4FA1
+      </servlet-name>
+      <url-pattern>/businessUtility/AuditTrail.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        XC020D3065FCC48C7BF34238EDBB6A45B
+      </servlet-name>
+      <url-pattern>/ad_actionButton/ActionButtonJava_Responser.html</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>
+        XF9CAF92FC3A84BAD8644B0006EF483FB
+      </servlet-name>
+      <url-pattern>/org.openbravo.advpaymentmngt.ad_forms/BatchPaymentExecution.html</url-pattern>
+    </servlet-mapping>
+  
+
+    
+    
+  
+  <error-page>
+    <location>/src-loc/design/org/openbravo/erpCommon/security/Error.html</location>
+  </error-page>
+  
+  
+  <mime-mapping>
+    <extension>wsdl</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>xsd</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+
+  <welcome-file-list id="WelcomeFileList">
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+</web-app>
